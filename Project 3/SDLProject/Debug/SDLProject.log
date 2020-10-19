@@ -1,0 +1,7 @@
+﻿  main.cpp
+C:\Users\Tehya\Documents\CSUY3113\Project 3\SDLProject\main.cpp(101,31): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Tehya\Documents\CSUY3113\Project 3\SDLProject\main.cpp(102,30): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Tehya\Documents\CSUY3113\Project 3\SDLProject\main.cpp(186,32): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Tehya\Documents\CSUY3113\Project 3\SDLProject\main.cpp(192,32): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Tehya\Documents\CSUY3113\Project 3\SDLProject\main.cpp(265,23): warning C4018: '<': signed/unsigned mismatch
+  SDLProject.vcxproj -> C:\Users\Tehya\Documents\CSUY3113\Project 3\SDLProject\Debug\SDLProject.exe
