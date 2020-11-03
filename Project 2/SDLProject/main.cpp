@@ -5,6 +5,8 @@
 #endif
 
 #define GL_GLEXT_PROTOTYPES 1
+
+#include <SDL_mixer.h>
 #include <SDL.h>
 #include <SDL_opengl.h>
 #include "glm/mat4x4.hpp"
@@ -37,8 +39,11 @@ bool move_right = true;
 bool move_up = true;
 bool wall_hit = true;
 
+Mix_Music* music;
+Mix_Chunk* bounce;
+
 void Initialize() {
-    SDL_Init(SDL_INIT_VIDEO);
+    SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO);
     displayWindow = SDL_CreateWindow("Pong! - Press Enter To Start!", 
               SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_OPENGL);
     SDL_GLContext context = SDL_GL_CreateContext(displayWindow);
@@ -51,6 +56,12 @@ void Initialize() {
     glViewport(0, 0, 640, 480);
 
     program.Load("shaders/vertex.glsl", "shaders/fragment.glsl");
+
+    Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096);
+    music = Mix_LoadMUS("dooblydoo.mp3");
+    Mix_PlayMusic(music, -1);
+
+    bounce = Mix_LoadWAV("bounce.wav");
 
     viewMatrix = glm::mat4(1.0f);
     ballMatrix = glm::mat4(1.0f);
@@ -67,6 +78,8 @@ void Initialize() {
     glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+    Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096);
 
 }
 
@@ -134,10 +147,12 @@ void BallCollision(float deltaTime) {
         ((paddle_height + ball_height) / 2.0f);
 
     if (p1AndBallX < 0 && p1AndBallY < 0) {
+        Mix_PlayChannel(-1, bounce, 0);
         move_right = true;
     }
 
     else if (p2AndBallX < 0 && p2AndBallY < 0) {
+        Mix_PlayChannel(-1, bounce, 0);
         move_right = false;
     }
 
@@ -151,9 +166,11 @@ void BallCollision(float deltaTime) {
     }
 
     else if (ball_position.y > 3.50) {
+        Mix_PlayChannel(-1, bounce, 0);
         move_up = false;
     }
     else if (ball_position.y < -3.50) {
+        Mix_PlayChannel(-1, bounce, 0);
         move_up = true;
     }
 
@@ -181,12 +198,12 @@ void Update() {
 
     if (!wall_hit) {
 
-        if (move_right) ball_position.x += 1.0f * deltaTime;
-        else ball_position.x -= 1.0f * deltaTime;
+        if (move_right) ball_position.x += 1.5f * deltaTime;
+        else ball_position.x -= 1.5f * deltaTime;
 
         
-        if (move_up) ball_position.y += 1.0f * deltaTime;
-        else ball_position.y -= 1.0f * deltaTime;
+        if (move_up) ball_position.y += 1.5f * deltaTime;
+        else ball_position.y -= 1.5f * deltaTime;
         
     }
 
