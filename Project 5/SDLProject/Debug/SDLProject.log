@@ -1,0 +1,12 @@
+﻿  entity.cpp
+  level1.cpp
+C:\Users\Tehya\Documents\CSUY3113\Project 5\SDLProject\level1.cpp(59,33): warning C4305: '=': truncation from 'double' to 'float'
+  level2.cpp
+  level3.cpp
+C:\Users\Tehya\Documents\CSUY3113\Project 5\SDLProject\level3.cpp(60,33): warning C4305: '=': truncation from 'double' to 'float'
+  main.cpp
+  menu.cpp
+  scene.cpp
+  Generating Code...
+  LINK : C:\Users\Tehya\Documents\CSUY3113\Project 5\SDLProject\Debug\SDLProject.exe not found or not built by the last incremental link; performing full link
+  SDLProject.vcxproj -> C:\Users\Tehya\Documents\CSUY3113\Project 5\SDLProject\Debug\SDLProject.exe

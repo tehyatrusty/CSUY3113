@@ -1,0 +1,6 @@
+C:\Users\Tehya\Downloads\CS3113-master\CS3113-master\Templates\VisualStudioSDLProject\SDLProject\Debug\SDLProject.exe
+C:\Users\Tehya\Downloads\CS3113-master\CS3113-master\Templates\VisualStudioSDLProject\SDLProject\Debug\SDLProject.pdb
+C:\Users\Tehya\Documents\CSUY3113 Examples\SDLProject\Debug\SDLProject.exe
+C:\Users\Tehya\Documents\CSUY3113 Examples\SDLProject\Debug\SDLProject.pdb
+C:\Users\Tehya\Documents\CSUY3113\Project 5\SDLProject\Debug\SDLProject.exe
+C:\Users\Tehya\Documents\CSUY3113\Project 5\SDLProject\Debug\SDLProject.pdb
